@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missions | The Wade Center</title>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
     <style>
         /* --- Core Variables & Reset --- */
         :root {
@@ -18,7 +21,11 @@
             --card-yellow: #fffde7;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Nunito', sans-serif;
@@ -27,10 +34,16 @@
             line-height: 1.6;
             background-image: radial-gradient(#e0dcd3 1px, transparent 1px);
             background-size: 20px 20px;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 { font-family: 'Caveat', cursive; line-height: 1.2; }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Caveat', cursive;
+            line-height: 1.2;
+        }
 
         /* --- Navigation --- */
         nav {
@@ -42,20 +55,62 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .logo { font-family: 'Caveat', cursive; font-size: 2.5rem; color: white; text-decoration: none; transition: transform 0.3s; }
-        .logo:hover { transform: rotate(-2deg) scale(1.05); }
+        .logo {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
 
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--mustard); }
-        .nav-links a.active { color: var(--mustard); border-bottom: 2px solid var(--mustard); }
+        .logo:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--mustard);
+        }
+
+        .nav-links a.active {
+            color: var(--mustard);
+            border-bottom: 2px solid var(--mustard);
+        }
 
         /* --- Hamburger Menu --- */
-        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 101; }
-        .hamburger div { width: 30px; height: 3px; background-color: white; transition: all 0.3s ease; border-radius: 5px; }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 101;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
 
         /* --- Hero Section --- */
         .hero-sub {
@@ -70,143 +125,456 @@
             align-items: center;
         }
 
-        .hero-sub h1 { font-size: 4.5rem; color: var(--wade-red); text-shadow: 2px 2px 0px rgba(0,0,0,0.05); margin-bottom: 1rem; }
-        .hero-sub p { font-size: 1.5rem; font-weight: 700; color: var(--navy); max-width: 700px; }
-
-        /* --- Main Layout --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 5%; }
-        
-        .section-split { display: flex; align-items: center; gap: 4rem; margin-bottom: 6rem; }
-        .section-split:nth-child(even) { flex-direction: row-reverse; }
-
-        .text-content { flex: 1; }
-        .image-content { flex: 1; position: relative; }
-
-        .image-content img {
-            width: 100%; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            transform: rotate(2deg); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .hero-sub h1 {
+            font-size: 4.5rem;
+            color: var(--wade-red);
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
         }
 
-        .section-split:nth-child(even) .image-content img { transform: rotate(-2deg); }
-        .image-content img:hover, .section-split:nth-child(even) .image-content img:hover { transform: rotate(0deg) scale(1.03); }
+        .hero-sub p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            max-width: 700px;
+        }
+
+        /* --- Main Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section-split {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .section-split:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .image-content {
+            flex: 1;
+            position: relative;
+        }
+
+        .image-content img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: rotate(2deg);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .section-split:nth-child(even) .image-content img {
+            transform: rotate(-2deg);
+        }
+
+        .image-content img:hover,
+        .section-split:nth-child(even) .image-content img:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
 
         .image-content::after {
-            content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%) rotate(-4deg);
-            width: 100px; height: 30px; background-color: var(--tape-color); backdrop-filter: blur(4px); 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); pointer-events: none; 
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-4deg);
+            width: 100px;
+            height: 30px;
+            background-color: var(--tape-color);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
         }
 
         /* --- Craft Cards (What to Expect) --- */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 6rem; }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 6rem;
+        }
+
         .card {
-            background: white; padding: 2.5rem; border-radius: 2px 15px 15px 2px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08); position: relative; transition: transform 0.3s ease;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 2px 15px 15px 2px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: transform 0.3s ease;
         }
+
         .card::before {
-            content: ''; position: absolute; top: -10px; left: 50%; transform: translateX(-50%) rotate(-3deg); 
-            width: 80px; height: 25px; background-color: var(--tape-color); backdrop-filter: blur(2px);
-            border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 80px;
+            height: 25px;
+            background-color: var(--tape-color);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
-        .card.rotate-left { transform: rotate(-1.5deg); }
-        .card.rotate-right { transform: rotate(1.5deg); }
-        .card.rotate-left:hover { transform: rotate(-1.5deg) translateY(-5px); }
-        .card.rotate-right:hover { transform: rotate(1.5deg) translateY(-5px); }
-        .card h3 { font-size: 2.2rem; color: var(--wade-red); margin-bottom: 1rem; border-bottom: 3px solid var(--mustard); display: inline-block; }
+
+        .card.rotate-left {
+            transform: rotate(-1.5deg);
+        }
+
+        .card.rotate-right {
+            transform: rotate(1.5deg);
+        }
+
+        .card.rotate-left:hover {
+            transform: rotate(-1.5deg) translateY(-5px);
+        }
+
+        .card.rotate-right:hover {
+            transform: rotate(1.5deg) translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 2.2rem;
+            color: var(--wade-red);
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--mustard);
+            display: inline-block;
+        }
 
         /* --- Mission Dates (Index Cards) --- */
-        .dates-section { margin-bottom: 6rem; }
-        .date-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .date-card {
-            background-color: var(--card-yellow); padding: 2rem; border-top: 15px solid var(--navy);
-            box-shadow: 2px 4px 10px rgba(0,0,0,0.1); border-radius: 2px; position: relative;
+        .dates-section {
+            margin-bottom: 6rem;
         }
-        .date-card h4 { font-size: 2rem; color: var(--wade-red); margin-bottom: 0.5rem; }
-        .date-card h5 { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 900; color: var(--charcoal); margin-bottom: 1rem; text-transform: uppercase; }
-        .date-card p { font-size: 0.95rem; }
-        .date-card ul { margin-left: 1.5rem; font-size: 0.95rem; margin-top: 0.5rem; }
+
+        .date-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .date-card {
+            background-color: var(--card-yellow);
+            padding: 2rem;
+            border-top: 15px solid var(--navy);
+            box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .date-card h4 {
+            font-size: 2rem;
+            color: var(--wade-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .date-card h5 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .date-card p {
+            font-size: 0.95rem;
+        }
+
+        .date-card ul {
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
         .pin {
-            position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
-            width: 20px; height: 20px; background-color: #d32f2f; border-radius: 50%;
-            box-shadow: inset -3px -3px 5px rgba(0,0,0,0.2), 2px 4px 5px rgba(0,0,0,0.3);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: #d32f2f;
+            border-radius: 50%;
+            box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.2), 2px 4px 5px rgba(0, 0, 0, 0.3);
         }
 
         /* --- Pricing Board --- */
         .pricing-board {
-            background-color: white; padding: 4rem; border-radius: 8px; border: 2px solid #e0dcd3;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 6rem;
+            background-color: white;
+            padding: 4rem;
+            border-radius: 8px;
+            border: 2px solid #e0dcd3;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 6rem;
         }
-        .season-group { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 2px dashed #e0dcd3; }
-        .season-group:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
-        .season-group h3 { font-size: 2.5rem; color: var(--navy); display: inline-block; border-bottom: 4px solid var(--mustard); margin-bottom: 0.5rem; }
-        .season-desc { font-weight: 700; color: #555; margin-bottom: 2rem; font-size: 1.1rem; }
-        
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .pricing-card { background-color: var(--paper-bg); padding: 1.5rem; border-radius: 6px; border-left: 6px solid var(--wade-red); }
-        .pricing-card h4 { font-size: 1.8rem; color: var(--charcoal); margin-bottom: 0.5rem; }
-        
+
+        .season-group {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 2px dashed #e0dcd3;
+        }
+
+        .season-group:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .season-group h3 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            display: inline-block;
+            border-bottom: 4px solid var(--mustard);
+            margin-bottom: 0.5rem;
+        }
+
+        .season-desc {
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background-color: var(--paper-bg);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 6px solid var(--wade-red);
+        }
+
+        .pricing-card h4 {
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
         /* Label Maker Tags */
         .info-tag {
-            display: inline-block; background-color: var(--mustard); color: var(--charcoal);
-            padding: 0.2rem 0.8rem; font-weight: 900; font-size: 1.1rem; border-radius: 2px;
-            box-shadow: 2px 2px 0px rgba(0,0,0,0.1); transform: rotate(-1deg); margin-bottom: 1rem;
+            display: inline-block;
+            background-color: var(--mustard);
+            color: var(--charcoal);
+            padding: 0.2rem 0.8rem;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border-radius: 2px;
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+            transform: rotate(-1deg);
+            margin-bottom: 1rem;
             font-family: 'Nunito', sans-serif;
         }
 
         /* --- Gallery --- */
-        .gallery-title { text-align: center; font-size: 3.5rem; color: var(--navy); margin-bottom: 2rem; padding: 0 5%;}
-        .gallery-container { width: 100%; overflow: hidden; white-space: nowrap; padding: 2rem 0 6rem 0; position: relative; }
-        .gallery-track { display: inline-block; animation: scroll-left 40s linear infinite; }
-        .gallery-item {
-            display: inline-block; margin: 0 1.5rem; height: 350px; width: auto;   
-            border-radius: 4px; border: 10px solid white; box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            cursor: pointer; position: relative; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .gallery-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            padding: 0 5%;
         }
-        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .gallery-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 2rem 0 6rem 0;
+            position: relative;
+        }
+
+        .gallery-track {
+            display: inline-block;
+            animation: scroll-left 40s linear infinite;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            margin: 0 1.5rem;
+            height: 350px;
+            width: auto;
+            border-radius: 4px;
+            border: 10px solid white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
 
         @media (hover: hover) and (pointer: fine) {
-            .gallery-container:hover .gallery-track { animation-play-state: paused; }
-            .gallery-item:hover { transform: scale(1.2) rotate(-3deg); z-index: 50; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border-color: var(--mustard); }
+            .gallery-container:hover .gallery-track {
+                animation-play-state: paused;
+            }
+
+            .gallery-item:hover {
+                transform: scale(1.2) rotate(-3deg);
+                z-index: 50;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                border-color: var(--mustard);
+            }
         }
 
         /* --- Scroll Animation Classes --- */
-        .hidden-left { opacity: 0; transform: translateX(-100px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hidden-right { opacity: 0; transform: translateX(100px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hidden-up { opacity: 0; transform: translateY(80px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .show { opacity: 1; transform: translateX(0) translateY(0); }
+        .hidden-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hidden-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hidden-up {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
 
         /* --- CTA & Footer --- */
-        .cta-section { background-color: var(--wade-red); color: white; text-align: center; padding: 6rem 5%; }
-        footer { background-color: var(--charcoal); color: white; text-align: center; padding: 2rem; }
+        .cta-section {
+            background-color: var(--wade-red);
+            color: white;
+            text-align: center;
+            padding: 6rem 5%;
+        }
+
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            .hamburger { display: flex !important; }
-            .nav-links {
-                position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--wade-red);
-                flex-direction: column; align-items: center; padding: 0; max-height: 0; overflow: hidden;
-                transition: max-height 0.4s ease-out, padding 0.4s ease-out; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            .hamburger {
+                display: flex !important;
             }
-            .nav-links.nav-active { max-height: 600px; padding: 2rem 0; }
-            .nav-links li { margin: 1rem 0; }
-            .toggle .line1 { transform: rotate(-45deg) translate(-6px, 6px); }
-            .toggle .line2 { opacity: 0; }
-            .toggle .line3 { transform: rotate(45deg) translate(-6px, -6px); }
 
-            .hero-sub { padding: 4rem 5%; background-attachment: scroll; }
-            .hero-sub h1 { font-size: 3.5rem; }
-            .section-split, .section-split:nth-child(even) { flex-direction: column; text-align: center; gap: 2.5rem; }
-            .card { transform: none !important; } 
-            
-            .pricing-board { padding: 2rem 1.5rem; border: none; }
-            
-            .gallery-title { font-size: 2.5rem; }
-            .gallery-container { overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 1rem 0; }
-            .gallery-track { animation: none !important; display: flex; padding: 0 1rem; }
-            .gallery-item { height: 250px; margin: 0 0.5rem; scroll-snap-align: center; flex-shrink: 0; }
-            .duplicate { display: none; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--wade-red);
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.nav-active {
+                max-height: 600px;
+                padding: 2rem 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-6px, 6px);
+            }
+
+            .toggle .line2 {
+                opacity: 0;
+            }
+
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-6px, -6px);
+            }
+
+            .hero-sub {
+                padding: 4rem 5%;
+                background-attachment: scroll;
+            }
+
+            .hero-sub h1 {
+                font-size: 3.5rem;
+            }
+
+            .section-split,
+            .section-split:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                gap: 2.5rem;
+            }
+
+            .card {
+                transform: none !important;
+            }
+
+            .pricing-board {
+                padding: 2rem 1.5rem;
+                border: none;
+            }
+
+            .gallery-title {
+                font-size: 2.5rem;
+            }
+
+            .gallery-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                padding: 1rem 0;
+            }
+
+            .gallery-track {
+                animation: none !important;
+                display: flex;
+                padding: 0 1rem;
+            }
+
+            .gallery-item {
+                height: 250px;
+                margin: 0 0.5rem;
+                scroll-snap-align: center;
+                flex-shrink: 0;
+            }
+
+            .duplicate {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -232,66 +600,84 @@
     </header>
 
     <main class="container">
-        
+
         <section class="section-split">
             <div class="text-content hidden-left">
                 <h2 style="font-size: 3.5rem; color: var(--wade-red);">Serving the Community</h2>
-                <p>Our missions have a focus in relational ministry, serving at-risk children within our program and families in our community. Whether volunteers would like to focus on building relationships, engaging their talents, or just assisting where needed, we seek out those opportunities to cultivate a special connection to the community through selfless service.</p>
+                <p>Our missions have a focus in relational ministry, serving at-risk children within our program and
+                    families in our community. Whether volunteers would like to focus on building relationships,
+                    engaging their talents, or just assisting where needed, we seek out those opportunities to cultivate
+                    a special connection to the community through selfless service.</p>
                 <br>
-                <p>Mission teams this past year have enjoyed leading our kids' program through children's worship, STEM activities, games, city clean-ups, serving in food banks, and other uplifting projects.</p>
+                <p>Mission teams this past year have enjoyed leading our kids' program through children's worship, STEM
+                    activities, games, city clean-ups, serving in food banks, and other uplifting projects.</p>
             </div>
             <div class="image-content hidden-right">
-                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=800" alt="Volunteers serving">
+                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=800"
+                    alt="Volunteers serving">
             </div>
         </section>
 
-        <h2 style="text-align: center; font-size: 3.5rem; color: var(--navy); margin-bottom: 2rem;" class="hidden-up">What to Expect</h2>
+        <h2 style="text-align: center; font-size: 3.5rem; color: var(--navy); margin-bottom: 2rem;" class="hidden-up">
+            What to Expect</h2>
         <div class="card-grid">
             <div class="card rotate-left hidden-up">
                 <h3>Extended Facility</h3>
-                <p>The two-building campus includes several group gathering areas: a full-court gym, large cafeteria, playground, outdoor basketball courts, pavilion, and an auditorium with a stage. Teams enjoy watching movies, leading worship, or playing games on our large projectors.</p>
+                <p>The two-building campus includes several group gathering areas: a full-court gym, large cafeteria,
+                    playground, outdoor basketball courts, pavilion, and an auditorium with a stage. Teams enjoy
+                    watching movies, leading worship, or playing games on our large projectors.</p>
             </div>
             <div class="card rotate-right hidden-up delay-1">
                 <h3>Easy Registration</h3>
-                <p>We offer flexible registration packages to accommodate for the needs of the team. Teams have the option to select our traditional registration packages, which provide lodging and meals, or a package with meals not included. Adjust your trip length as needed!</p>
+                <p>We offer flexible registration packages to accommodate for the needs of the team. Teams have the
+                    option to select our traditional registration packages, which provide lodging and meals, or a
+                    package with meals not included. Adjust your trip length as needed!</p>
             </div>
             <div class="card rotate-left hidden-up delay-2">
                 <h3>Local Activities</h3>
-                <p>When teams are not serving, they enjoy a wide variety of activities in the area. These include: visiting the Pocahontas Exhibition Coal Mine, hiking local trails, viewing the sunset at the East River Mountain Overlook, or taking a trip back in time at The Corner Shop in Bramwell.</p>
+                <p>When teams are not serving, they enjoy a wide variety of activities in the area. These include:
+                    visiting the Pocahontas Exhibition Coal Mine, hiking local trails, viewing the sunset at the East
+                    River Mountain Overlook, or taking a trip back in time at The Corner Shop in Bramwell.</p>
             </div>
         </div>
 
         <div class="dates-section hidden-up">
-            <h2 style="font-size: 3.5rem; color: var(--charcoal); text-align: center; margin-bottom: 2rem;">Mission Dates & Schedules</h2>
-            
+            <h2 style="font-size: 3.5rem; color: var(--charcoal); text-align: center; margin-bottom: 2rem;">Mission
+                Dates & Schedules</h2>
+
             <div class="date-grid">
-                
+
                 <div class="date-card">
                     <div class="pin"></div>
                     <h4>Summer Missions 2022</h4>
                     <h5>July 5th - 31st</h5>
-                    <p>Please contact us to find out ways to serve during the COVID-19 crisis. Even though our traditional kid's camp is not in session, there are many ways to still serve as the Wade reorganizes & cleans for reopening.</p>
+                    <p>Please contact us to find out ways to serve during the COVID-19 crisis. Even though our
+                        traditional kid's camp is not in session, there are many ways to still serve as the Wade
+                        reorganizes & cleans for reopening.</p>
                 </div>
 
                 <div class="date-card">
                     <div class="pin"></div>
                     <h4>Fall Missions 2022</h4>
                     <h5>October - November 2020</h5>
-                    <p>We are accepting smaller traditional teams, as well as, short-term weekend teams for the fall. This is a great way to spend fall break or holidays!</p>
+                    <p>We are accepting smaller traditional teams, as well as, short-term weekend teams for the fall.
+                        This is a great way to spend fall break or holidays!</p>
                 </div>
 
                 <div class="date-card">
                     <div class="pin"></div>
                     <h4>Christmas at Wade 2022</h4>
                     <h5>December 7th - 18th</h5>
-                    <p>Join our kids for their Christmas Festivities! Visit as a family, team, or individually. Bookings are based on a Holiday discounted nightly rate. You choose your length of stay!</p>
+                    <p>Join our kids for their Christmas Festivities! Visit as a family, team, or individually. Bookings
+                        are based on a Holiday discounted nightly rate. You choose your length of stay!</p>
                 </div>
 
                 <div class="date-card">
                     <div class="pin"></div>
                     <h4>Spring Missions 2023</h4>
                     <h5>January 31st - April 30th</h5>
-                    <p>Join us for Alternative Break during Spring Semester! March books up fast, so place a reservation early to land your ideal dates!</p>
+                    <p>Join us for Alternative Break during Spring Semester! March books up fast, so place a reservation
+                        early to land your ideal dates!</p>
                 </div>
 
                 <div class="date-card">
@@ -324,8 +710,10 @@
         </div>
 
         <div class="pricing-board hidden-up">
-            <h2 style="font-size: 3.5rem; color: var(--charcoal); text-align: center; margin-bottom: 0.5rem;">Mission Packages & Pricing</h2>
-            <p style="text-align: center; color: var(--wade-red); font-weight: 700; margin-bottom: 3rem;">* All registration prices are custom to change. Make reservations early to lock in the best price.</p>
+            <h2 style="font-size: 3.5rem; color: var(--charcoal); text-align: center; margin-bottom: 0.5rem;">Mission
+                Packages & Pricing</h2>
+            <p style="text-align: center; color: var(--wade-red); font-weight: 700; margin-bottom: 3rem;">* All
+                registration prices are custom to change. Make reservations early to lock in the best price.</p>
 
             <div class="season-group">
                 <h3>Fall Missions Prices</h3>
@@ -351,7 +739,8 @@
                     <div class="pricing-card" style="border-left-color: #2e7d32;">
                         <h4>Christmas @ Wade</h4>
                         <span class="info-tag">$55 / night</span>
-                        <p><strong>Some meals included.</strong> Dinner included daily on Monday - Thursdays. Breakfast included daily on Fridays - Saturdays.</p>
+                        <p><strong>Some meals included.</strong> Dinner included daily on Monday - Thursdays. Breakfast
+                            included daily on Fridays - Saturdays.</p>
                     </div>
                 </div>
             </div>
@@ -383,14 +772,16 @@
                     <div class="pricing-card" style="border-left-color: var(--charcoal);">
                         <h4>Additional Night</h4>
                         <span class="info-tag" style="background-color: var(--charcoal); color: white;">$25</span>
-                        <p><strong>1-night additional stay.</strong> Add-on to Traditional & Lite packages only. No meals included on this day.</p>
+                        <p><strong>1-night additional stay.</strong> Add-on to Traditional & Lite packages only. No
+                            meals included on this day.</p>
                     </div>
                 </div>
             </div>
 
             <div class="season-group">
                 <h3 style="border-bottom-color: var(--wade-red);">Summer Missions Prices</h3>
-                <p class="season-desc">Bookings for June/July 2023 (Check-in on Sunday Night, Check-out on Friday Morning)</p>
+                <p class="season-desc">Bookings for June/July 2023 (Check-in on Sunday Night, Check-out on Friday
+                    Morning)</p>
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <h4>Early Registration</h4>
@@ -405,7 +796,8 @@
                     <div class="pricing-card" style="border-left-color: var(--charcoal);">
                         <h4>Additional Night (Friday)</h4>
                         <span class="info-tag" style="background-color: var(--charcoal); color: white;">$25</span>
-                        <p><strong>1-night additional stay.</strong> Add-on to Early and Traditional Registration packages only. No meals included on this day.</p>
+                        <p><strong>1-night additional stay.</strong> Add-on to Early and Traditional Registration
+                            packages only. No meals included on this day.</p>
                     </div>
                 </div>
             </div>
@@ -417,42 +809,56 @@
     <h2 class="gallery-title hidden-up">Past Mission Memories</h2>
     <div class="gallery-container hidden-up delay-1">
         <div class="gallery-track">
-            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1593113563332-ba74c1ab6b41?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            
-            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1593113563332-ba74c1ab6b41?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1593113563332-ba74c1ab6b41?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+
+            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1593113563332-ba74c1ab6b41?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
         </div>
     </div>
 
     <section class="cta-section hidden-up">
         <h2 style="font-size: 3.5rem; margin-bottom: 0.5rem;">Book Your Next Missions Trip</h2>
-        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 1.5rem;">We'd like to assist your team in planning & customizing your very own missions trip or alternative break visit to the Wade Center.</p>
-        
-<div style="background-color: white; color: var(--charcoal); display: inline-block; padding: 1.5rem; border-radius: 8px; box-shadow: 0 8px 15px rgba(0,0,0,0.2); transform: rotate(1deg); max-width: 100%; box-sizing: border-box;">
-    <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; word-break: break-word;">
-        Email: <a href="mailto:missions.justin@wadecenter.com" style="color: var(--wade-red); text-decoration: none;">missions.justin@wadecenter.com</a>
-    </p>
-    <p style="font-size: 1.2rem; font-weight: 700;">
-        Call: <a href="tel:3043233777" style="color: var(--wade-red); text-decoration: none;">304-323-3777</a>
-    </p>
-</div>
-        
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 1.5rem;">We'd like to assist your team in planning
+            & customizing your very own missions trip or alternative break visit to the Wade Center.</p>
+
+        <div
+            style="background-color: white; color: var(--charcoal); display: inline-block; padding: 1.5rem; border-radius: 8px; box-shadow: 0 8px 15px rgba(0,0,0,0.2); transform: rotate(1deg); max-width: 100%; box-sizing: border-box;">
+            <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; word-break: break-word;">
+                Email: <a href="mailto:missions.justin@wadecenter.com"
+                    style="color: var(--wade-red); text-decoration: none;">missions.justin@wadecenter.com</a>
+            </p>
+            <p style="font-size: 1.2rem; font-weight: 700;">
+                Call: <a href="tel:3043233777" style="color: var(--wade-red); text-decoration: none;">304-323-3777</a>
+            </p>
+        </div>
+
         <blockquote style="margin-top: 3rem; font-style: italic; opacity: 0.9;">
-            "They will rebuild the ancient ruins and restore the places long devastated; they will renew the ruined cities that have been devastated for generations"<br>
+            "They will rebuild the ancient ruins and restore the places long devastated; they will renew the ruined
+            cities that have been devastated for generations"<br>
             <strong>— Isaiah 61:4</strong>
         </blockquote>
     </section>
 
     <footer>
         <p>1400 Highland Ave, Bluefield, WV 24701</p>
-        <p>&copy; 2026 The Wade Center</p>
+        <p>© 2026 The Wade Center - All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -473,11 +879,12 @@
                 }
             });
         }, {
-            threshold: 0.15 
+            threshold: 0.15
         });
 
         const hiddenElements = document.querySelectorAll('.hidden-left, .hidden-right, .hidden-up');
         hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
+
 </html>

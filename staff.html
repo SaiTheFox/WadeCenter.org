@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrative Staff | The Wade Center</title>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         /* --- Core Variables & Reset --- */
         :root {
@@ -17,7 +22,11 @@
             --tape-color: rgba(255, 255, 255, 0.7);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Nunito', sans-serif;
@@ -26,10 +35,16 @@
             line-height: 1.6;
             background-image: radial-gradient(#e0dcd3 1px, transparent 1px);
             background-size: 20px 20px;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 { font-family: 'Caveat', cursive; line-height: 1.2; }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Caveat', cursive;
+            line-height: 1.2;
+        }
 
         /* --- Navigation --- */
         nav {
@@ -41,20 +56,62 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .logo { font-family: 'Caveat', cursive; font-size: 2.5rem; color: white; text-decoration: none; transition: transform 0.3s; }
-        .logo:hover { transform: rotate(-2deg) scale(1.05); }
+        .logo {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
 
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--mustard); }
-        .nav-links a.active { color: var(--mustard); border-bottom: 2px solid var(--mustard); }
+        .logo:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--mustard);
+        }
+
+        .nav-links a.active {
+            color: var(--mustard);
+            border-bottom: 2px solid var(--mustard);
+        }
 
         /* --- Hamburger Menu --- */
-        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 101; }
-        .hamburger div { width: 30px; height: 3px; background-color: white; transition: all 0.3s ease; border-radius: 5px; }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 101;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
 
         /* --- Sub-Page Hero Section --- */
         .hero-sub {
@@ -69,58 +126,87 @@
             align-items: center;
         }
 
-        .hero-sub h1 { font-size: 4.5rem; color: var(--wade-red); text-shadow: 2px 2px 0px rgba(0,0,0,0.05); margin-bottom: 1rem; }
+        .hero-sub h1 {
+            font-size: 4.5rem;
+            color: var(--wade-red);
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+        }
 
         /* --- Main Layout --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 5%; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
 
         /* --- Staff Grid & Cards --- */
         .staff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 4rem 3rem; 
+            gap: 4rem 3rem;
             margin-top: 2rem;
             margin-bottom: 4rem;
         }
 
         .staff-card {
-            background: white; 
-            padding: 3.5rem 2rem 2.5rem 2rem; 
+            background: white;
+            padding: 3.5rem 2rem 2.5rem 2rem;
             border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
-            position: relative; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
             transition: transform 0.3s ease;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        
+
         .staff-card::before {
-            content: ''; position: absolute; top: -12px; left: 50%;
-            transform: translateX(-50%) rotate(-3deg); width: 80px; height: 25px;
-            background-color: var(--tape-color); backdrop-filter: blur(2px);
-            border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 80px;
+            height: 25px;
+            background-color: var(--tape-color);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             z-index: 10;
         }
 
-        .staff-card.rotate-left { transform: rotate(-1.5deg); }
-        .staff-card.rotate-right { transform: rotate(1.5deg); }
-        .staff-card.rotate-left:hover { transform: rotate(-1.5deg) translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
-        .staff-card.rotate-right:hover { transform: rotate(1.5deg) translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
-
-        .staff-card h3 { 
-            font-size: 2.5rem; 
-            color: var(--wade-red); 
-            line-height: 1.1;
-            margin-bottom: 0.5rem; 
+        .staff-card.rotate-left {
+            transform: rotate(-1.5deg);
         }
 
-        .staff-card .title { 
-            font-size: 1rem; 
-            font-weight: 900; 
-            color: var(--navy); 
+        .staff-card.rotate-right {
+            transform: rotate(1.5deg);
+        }
+
+        .staff-card.rotate-left:hover {
+            transform: rotate(-1.5deg) translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .staff-card.rotate-right:hover {
+            transform: rotate(1.5deg) translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .staff-card h3 {
+            font-size: 2.5rem;
+            color: var(--wade-red);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .staff-card .title {
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--navy);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 2rem;
@@ -134,12 +220,12 @@
             font-size: 0.95rem;
             color: var(--charcoal);
             text-decoration: none;
-            background-color: rgba(238, 179, 42, 0.15); 
+            background-color: rgba(238, 179, 42, 0.15);
             padding: 0.5rem 1rem;
             border-radius: 12px;
             font-weight: 700;
             transition: all 0.2s ease;
-            
+
             /* CSS Fix for long emails overflowing the card */
             max-width: 100%;
             word-break: break-word;
@@ -153,47 +239,152 @@
         }
 
         /* --- Scroll Animation Classes --- */
-        .hidden-left { opacity: 0; transform: translateX(-100px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hidden-right { opacity: 0; transform: translateX(100px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hidden-up { opacity: 0; transform: translateY(80px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .show { opacity: 1; transform: translateX(0) translateY(0); }
+        .hidden-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
+        .hidden-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hidden-up {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
 
         /* --- CTA & Footer --- */
-        .cta-section { background-color: var(--wade-red); color: white; text-align: center; padding: 6rem 5%; }
-        .btn { display: inline-block; background-color: var(--mustard); color: var(--charcoal); padding: 1rem 2.5rem; font-size: 1.2rem; font-weight: 900; text-decoration: none; border-radius: 50px; margin-top: 1.5rem; box-shadow: 0 6px 12px rgba(0,0,0,0.2); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .btn:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        footer { background-color: var(--charcoal); color: white; text-align: center; padding: 2rem; }
+        .cta-section {
+            background-color: var(--wade-red);
+            color: white;
+            text-align: center;
+            padding: 6rem 5%;
+        }
+
+        .btn-paypal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background-color: #FFC439;
+            /* Official PayPal Yellow */
+            color: #003087;
+            /* Official PayPal Dark Blue */
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .btn-paypal i {
+            font-size: 1.5rem;
+        }
+
+        .btn-paypal:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background-color: #003087;
+            color: white;
+        }
+
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            .hamburger { display: flex !important; }
-            .nav-links {
-                position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--wade-red);
-                flex-direction: column; align-items: center; padding: 0; max-height: 0; overflow: hidden;
-                transition: max-height 0.4s ease-out, padding 0.4s ease-out; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            .hamburger {
+                display: flex !important;
             }
-            .nav-links.nav-active { max-height: 600px; padding: 2rem 0; }
-            .nav-links li { margin: 1rem 0; }
-            .toggle .line1 { transform: rotate(-45deg) translate(-6px, 6px); }
-            .toggle .line2 { opacity: 0; }
-            .toggle .line3 { transform: rotate(45deg) translate(-6px, -6px); }
 
-            .hero-sub { padding: 4rem 5%; background-attachment: scroll; }
-            .hero-sub h1 { font-size: 3.5rem; }
-            
-            .staff-card { transform: none !important; margin-bottom: 1.5rem; padding: 2.5rem 1.5rem 2rem 1.5rem; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--wade-red);
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.nav-active {
+                max-height: 600px;
+                padding: 2rem 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-6px, 6px);
+            }
+
+            .toggle .line2 {
+                opacity: 0;
+            }
+
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-6px, -6px);
+            }
+
+            .hero-sub {
+                padding: 4rem 5%;
+                background-attachment: scroll;
+            }
+
+            .hero-sub h1 {
+                font-size: 3.5rem;
+            }
+
+            .staff-card {
+                transform: none !important;
+                margin-bottom: 1.5rem;
+                padding: 2.5rem 1.5rem 2rem 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
         <a href="index.html" class="logo">The Wade Center</a>
-        
+
         <div class="hamburger" id="hamburger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -215,19 +406,20 @@
     </header>
 
     <main class="container">
-        
+
         <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;" class="hidden-up delay-1">
             <h2 style="font-size: 3rem; color: var(--navy); margin-bottom: 1rem;">Meet the Team</h2>
-            <p style="font-size: 1.2rem; color: var(--charcoal);">Dedicated to nurturing Bluefield’s youth and serving our community. Feel free to reach out to any of our staff members below.</p>
+            <p style="font-size: 1.2rem; color: var(--charcoal);">Dedicated to nurturing Bluefield’s youth and serving
+                our community. Feel free to reach out to any of our staff members below.</p>
         </div>
 
         <div class="staff-grid">
-            
+
             <div class="staff-card rotate-left hidden-up">
                 <h3>Betty Brainerd</h3>
                 <span class="title">Executive Director</span>
                 <div>
-                    <a href="mailto:executivedirector@wadecenter.com" class="email">executivedirector@wadecenter.com</a>
+                    <a href="mailto:executivedirector@wadecenter.org" class="email">executivedirector@wadecenter.org</a>
                 </div>
             </div>
 
@@ -235,7 +427,7 @@
                 <h3>Karen Harvey</h3>
                 <span class="title">Financial Administrative Assistant</span>
                 <div>
-                    <a href="mailto:info@wadecenter.com" class="email">info@wadecenter.com</a>
+                    <a href="mailto:info@wadecenter.org" class="email">info@wadecenter.org</a>
                 </div>
             </div>
 
@@ -243,7 +435,7 @@
                 <h3>Debra Graffeo</h3>
                 <span class="title">Administrative Assistant</span>
                 <div>
-                    <a href="mailto:office@wadecenter.com" class="email">office@wadecenter.com</a>
+                    <a href="mailto:office@wadecenter.org" class="email">office@wadecenter.org</a>
                 </div>
             </div>
 
@@ -251,7 +443,15 @@
                 <h3>Justin Johnson</h3>
                 <span class="title">Missions Coordinator</span>
                 <div>
-                    <a href="mailto:missions.justin@wadecenter.com" class="email">missions.justin@wadecenter.com</a>
+                    <a href="mailto:missions.justin@wadecenter.org" class="email">missions.justin@wadecenter.org</a>
+                </div>
+            </div>
+
+            <div class="staff-card rotate-right hidden-up delay-3">
+                <h3>Caleb Scott</h3>
+                <span class="title">Systems Administrator</span>
+                <div>
+                    <a href="mailto:cscott@wadecenter.org" class="email">cscott@wadecenter.org</a>
                 </div>
             </div>
 
@@ -261,13 +461,18 @@
 
     <section class="cta-section hidden-up">
         <h2 style="font-size: 3.5rem;">Help Our Cause</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">It's not just about making a donation. It's about making a <strong>DIFFERENCE</strong>.</p>
-        <a href="#" class="btn">Donate Now</a>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">It's not just about making a donation. It's about making a
+            <strong>DIFFERENCE</strong>.
+        </p>
+        <a href="https://www.paypal.com/donate?token=tgsWWeAAT15b2ifE9-HAL7m_o2XU5TVY9qiKN-NLVAjXLqna_A3GIsE0qsYJFclQVMNrRCBjKgnL0EDY"
+            target="_blank" class="btn-paypal">
+            <i class="fa-brands fa-paypal"></i> Donate with PayPal
+        </a>
     </section>
 
     <footer>
         <p>1400 Highland Ave, Bluefield, WV 24701</p>
-        <p>&copy; 2026 The Wade Center</p>
+        <p>© 2026 The Wade Center - All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -286,11 +491,12 @@
                 }
             });
         }, {
-            threshold: 0.15 
+            threshold: 0.15
         });
 
         const hiddenElements = document.querySelectorAll('.hidden-left, .hidden-right, .hidden-up');
         hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
+
 </html>

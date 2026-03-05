@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programs | The Wade Center</title>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
     <style>
         /* --- Core Variables & Reset --- */
         :root {
@@ -17,7 +23,11 @@
             --tape-color: rgba(255, 255, 255, 0.7);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Nunito', sans-serif;
@@ -26,10 +36,15 @@
             line-height: 1.6;
             background-image: radial-gradient(#e0dcd3 1px, transparent 1px);
             background-size: 20px 20px;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Caveat', cursive; line-height: 1.2; }
+        h1,
+        h2,
+        h3 {
+            font-family: 'Caveat', cursive;
+            line-height: 1.2;
+        }
 
         /* --- Navigation --- */
         nav {
@@ -41,20 +56,62 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .logo { font-family: 'Caveat', cursive; font-size: 2.5rem; color: white; text-decoration: none; transition: transform 0.3s; }
-        .logo:hover { transform: rotate(-2deg) scale(1.05); }
+        .logo {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
 
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--mustard); }
-        .nav-links a.active { color: var(--mustard); border-bottom: 2px solid var(--mustard); }
+        .logo:hover {
+            transform: rotate(-2deg) scale(1.05);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--mustard);
+        }
+
+        .nav-links a.active {
+            color: var(--mustard);
+            border-bottom: 2px solid var(--mustard);
+        }
 
         /* --- Hamburger Menu Styles --- */
-        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 101; }
-        .hamburger div { width: 30px; height: 3px; background-color: white; transition: all 0.3s ease; border-radius: 5px; }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 101;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
 
         /* --- Sub-Page Hero Section --- */
         .hero-sub {
@@ -69,33 +126,68 @@
             align-items: center;
         }
 
-        .hero-sub h1 { font-size: 4.5rem; color: var(--wade-red); text-shadow: 2px 2px 0px rgba(0,0,0,0.05); }
+        .hero-sub h1 {
+            font-size: 4.5rem;
+            color: var(--wade-red);
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+        }
 
         /* --- Main Layout --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 5%; }
-        
-        .section-split { display: flex; align-items: center; gap: 4rem; margin-bottom: 6rem; }
-        .section-split:nth-child(even) { flex-direction: row-reverse; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
 
-        .text-content { flex: 1; }
-        .image-content { flex: 1; position: relative; }
+        .section-split {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .section-split:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .image-content {
+            flex: 1;
+            position: relative;
+        }
 
         .image-content img {
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            transform: rotate(2deg); 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: rotate(2deg);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .section-split:nth-child(even) .image-content img { transform: rotate(-2deg); }
-        .image-content img:hover, .section-split:nth-child(even) .image-content img:hover { transform: rotate(0deg) scale(1.03); }
+        .section-split:nth-child(even) .image-content img {
+            transform: rotate(-2deg);
+        }
+
+        .image-content img:hover,
+        .section-split:nth-child(even) .image-content img:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
 
         .image-content::after {
-            content: ''; position: absolute; top: -15px; left: 50%;
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
             transform: translateX(-50%) rotate(-4deg);
-            width: 100px; height: 30px; background-color: var(--tape-color);
-            backdrop-filter: blur(4px); box-shadow: 0 2px 5px rgba(0,0,0,0.1); pointer-events: none; 
+            width: 100px;
+            height: 30px;
+            background-color: var(--tape-color);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
         }
 
         /* --- Program Info Tags (Looks like a highlighted label) --- */
@@ -113,10 +205,10 @@
             font-weight: 900;
             font-size: 0.9rem;
             border-radius: 4px;
-            box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
             transform: rotate(-1deg);
         }
-        
+
         .info-tag.alt {
             background-color: var(--navy);
             color: white;
@@ -128,7 +220,7 @@
             background-color: white;
             padding: 4rem 3rem;
             border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             border-top: 6px solid var(--wade-red);
             margin-bottom: 4rem;
             text-align: center;
@@ -136,52 +228,166 @@
         }
 
         .volunteer-card::before {
-            content: ''; position: absolute; top: -15px; left: 50%;
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
             transform: translateX(-50%) rotate(2deg);
-            width: 120px; height: 30px; background-color: var(--tape-color);
-            backdrop-filter: blur(4px); box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 120px;
+            height: 30px;
+            background-color: var(--tape-color);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         /* --- Scroll Animation Classes --- */
-        .hidden-left { opacity: 0; transform: translateX(-100px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hidden-right { opacity: 0; transform: translateX(100px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hidden-up { opacity: 0; transform: translateY(80px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .show { opacity: 1; transform: translateX(0) translateY(0); }
+        .hidden-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hidden-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hidden-up {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
 
         /* --- CTA & Footer --- */
-        .cta-section { background-color: var(--wade-red); color: white; text-align: center; padding: 6rem 5%; }
-        .btn { display: inline-block; background-color: var(--mustard); color: var(--charcoal); padding: 1rem 2.5rem; font-size: 1.2rem; font-weight: 900; text-decoration: none; border-radius: 50px; margin-top: 1.5rem; box-shadow: 0 6px 12px rgba(0,0,0,0.2); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .btn:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        footer { background-color: var(--charcoal); color: white; text-align: center; padding: 2rem; }
+        .cta-section {
+            background-color: var(--wade-red);
+            color: white;
+            text-align: center;
+            padding: 6rem 5%;
+        }
+
+        .btn-paypal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background-color: #FFC439;
+            /* Official PayPal Yellow */
+            color: #003087;
+            /* Official PayPal Dark Blue */
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .btn-paypal i {
+            font-size: 1.5rem;
+        }
+
+        .btn-paypal:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background-color: #003087;
+            color: white;
+        }
+
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            .hamburger { display: flex !important; }
-            .nav-links {
-                position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--wade-red);
-                flex-direction: column; align-items: center; padding: 0; max-height: 0; overflow: hidden;
-                transition: max-height 0.4s ease-out, padding 0.4s ease-out; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            .hamburger {
+                display: flex !important;
             }
-            .nav-links.nav-active { max-height: 600px; padding: 2rem 0; }
-            .nav-links li { margin: 1rem 0; }
-            .toggle .line1 { transform: rotate(-45deg) translate(-6px, 6px); }
-            .toggle .line2 { opacity: 0; }
-            .toggle .line3 { transform: rotate(45deg) translate(-6px, -6px); }
 
-            .hero-sub { padding: 4rem 5%; background-attachment: scroll; }
-            .hero-sub h1 { font-size: 3.5rem; }
-            .section-split, .section-split:nth-child(even) { flex-direction: column; text-align: center; gap: 2.5rem; }
-            .info-tag-container { justify-content: center; }
-            .volunteer-card { padding: 3rem 1.5rem; }
-            .cta-section { padding: 4rem 5%; }
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--wade-red);
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.nav-active {
+                max-height: 600px;
+                padding: 2rem 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-6px, 6px);
+            }
+
+            .toggle .line2 {
+                opacity: 0;
+            }
+
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-6px, -6px);
+            }
+
+            .hero-sub {
+                padding: 4rem 5%;
+                background-attachment: scroll;
+            }
+
+            .hero-sub h1 {
+                font-size: 3.5rem;
+            }
+
+            .section-split,
+            .section-split:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                gap: 2.5rem;
+            }
+
+            .info-tag-container {
+                justify-content: center;
+            }
+
+            .volunteer-card {
+                padding: 3rem 1.5rem;
+            }
+
+            .cta-section {
+                padding: 4rem 5%;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
         <a href="index.html" class="logo">The Wade Center</a>
-        
+
         <div class="hamburger" id="hamburger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -203,49 +409,61 @@
     </header>
 
     <main class="container">
-        
+
         <section class="section-split">
             <div class="text-content hidden-left">
                 <h2 style="font-size: 3rem; color: var(--wade-red);">After-School Program</h2>
-                <h3 style="font-size: 1.5rem; color: var(--mustard); margin-bottom: 1rem; font-family: 'Nunito', sans-serif; font-weight: 900; text-transform: uppercase;">Now Open!</h3>
-                <p>The Wade Center's After-School Program is for students who are in grades 1st-5th, or ages 6-12, in the Bluefield, WV area. Students receive an approved USDA snack and dinner daily, in addition to tutoring, music lessons, art classes, children's devotionals, and other enrichment activities.</p>
+                <h3
+                    style="font-size: 1.5rem; color: var(--mustard); margin-bottom: 1rem; font-family: 'Nunito', sans-serif; font-weight: 900; text-transform: uppercase;">
+                    Now Open!</h3>
+                <p>The Wade Center's After-School Program is for students who are in grades 1st-5th, or ages 6-12, in
+                    the Bluefield, WV area. Students receive an approved USDA snack and dinner daily, in addition to
+                    tutoring, music lessons, art classes, children's devotionals, and other enrichment activities.</p>
                 <br>
-                <p>Students also have opportunities to partake in field trips and community service projects throughout the year.</p>
-                
+                <p>Students also have opportunities to partake in field trips and community service projects throughout
+                    the year.</p>
+
                 <div class="info-tag-container">
                     <div class="info-tag">Monday - Thursday</div>
                     <div class="info-tag alt">2:30 PM - 5:00 PM</div>
                 </div>
             </div>
             <div class="image-content hidden-right">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="Students doing homework">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800"
+                    alt="Students doing homework">
             </div>
         </section>
 
         <section class="section-split">
             <div class="text-content hidden-right">
                 <h2 style="font-size: 3rem; color: var(--navy);">Summer Camp</h2>
-                <p>The Wade Center Summer Program is a seven-week day-camp for children in grades K-8 in the Bluefield area. Students participate in summer activities including Vacation Bible School, STEM projects, arts, sports camp, field trips, and much more!</p>
+                <p>The Wade Center Summer Program is a seven-week day-camp for children in grades K-8 in the Bluefield
+                    area. Students participate in summer activities including Vacation Bible School, STEM projects,
+                    arts, sports camp, field trips, and much more!</p>
                 <br>
-                <p>Students are fed an approved USDA breakfast and lunch daily. The children are also joined by visiting mission teams who bring new and exciting aspects to our summer program.</p>
-                
+                <p>Students are fed an approved USDA breakfast and lunch daily. The children are also joined by visiting
+                    mission teams who bring new and exciting aspects to our summer program.</p>
+
                 <div class="info-tag-container">
                     <div class="info-tag alt">June - August</div>
                     <div class="info-tag">Mon - Thurs | 9:00 AM - 4:00 PM</div>
                 </div>
-                <p style="font-size: 0.85rem; color: #777; margin-top: 0.5rem;"><em>*Closed the week of Independence Day</em></p>
+                <p style="font-size: 0.85rem; color: #777; margin-top: 0.5rem;"><em>*Closed the week of Independence
+                        Day</em></p>
             </div>
             <div class="image-content hidden-left">
-                <img src="https://images.unsplash.com/photo-1533222481259-ce20eda1e20b?auto=format&fit=crop&q=80&w=800" alt="Kids at summer camp">
+                <img src="https://images.unsplash.com/photo-1533222481259-ce20eda1e20b?auto=format&fit=crop&q=80&w=800"
+                    alt="Kids at summer camp">
             </div>
         </section>
 
         <div class="volunteer-card hidden-up">
             <h2 style="font-size: 3.5rem; color: var(--wade-red); margin-bottom: 1rem;">Volunteering Opportunities</h2>
             <p style="font-size: 1.2rem; color: var(--charcoal); max-width: 600px; margin: 0 auto;">
-                Want to make a direct impact on the youth of Bluefield? We are always looking for passionate individuals to join our team. 
+                Want to make a direct impact on the youth of Bluefield? We are always looking for passionate individuals
+                to join our team.
                 <br><br>
-                If you wish to sign up as a volunteer, please come to our main office to pick up an application. 
+                If you wish to sign up as a volunteer, please come to our main office to pick up an application.
                 <em>(You must be 18 years or older to apply).</em>
             </p>
         </div>
@@ -254,13 +472,18 @@
 
     <section class="cta-section hidden-up">
         <h2 style="font-size: 3.5rem;">Help Our Cause</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">It's not just about making a donation. It's about making a <strong>DIFFERENCE</strong>.</p>
-        <a href="#" class="btn">Donate Now</a>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">It's not just about making a donation. It's about making a
+            <strong>DIFFERENCE</strong>.
+        </p>
+        <a href="https://www.paypal.com/donate?token=tgsWWeAAT15b2ifE9-HAL7m_o2XU5TVY9qiKN-NLVAjXLqna_A3GIsE0qsYJFclQVMNrRCBjKgnL0EDY"
+            target="_blank" class="btn-paypal">
+            <i class="fa-brands fa-paypal"></i> Donate with PayPal
+        </a>
     </section>
 
     <footer>
         <p>1400 Highland Ave, Bluefield, WV 24701</p>
-        <p>&copy; 2026 The Wade Center</p>
+        <p>© 2026 The Wade Center - All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -281,11 +504,12 @@
                 }
             });
         }, {
-            threshold: 0.15 
+            threshold: 0.15
         });
 
         const hiddenElements = document.querySelectorAll('.hidden-left, .hidden-right, .hidden-up');
         hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
+
 </html>

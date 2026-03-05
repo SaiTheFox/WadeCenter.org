@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wade Center | Bluefield, WV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         /* CSS Variables */
         :root {
@@ -17,7 +23,11 @@
             --tape-color: rgba(255, 255, 255, 0.7);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Nunito', sans-serif;
@@ -26,10 +36,15 @@
             line-height: 1.6;
             background-image: radial-gradient(#e0dcd3 1px, transparent 1px);
             background-size: 20px 20px;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Caveat', cursive; line-height: 1.2; }
+        h1,
+        h2,
+        h3 {
+            font-family: 'Caveat', cursive;
+            line-height: 1.2;
+        }
 
         /* --- Navigation --- */
         nav {
@@ -41,7 +56,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .logo {
@@ -51,31 +66,39 @@
             text-decoration: none;
             transition: transform 0.3s;
         }
-        
-        .logo:hover { transform: rotate(-2deg) scale(1.05); }
 
-        .nav-links { 
-            list-style: none; 
-            display: flex; 
-            gap: 2rem; 
+        .logo:hover {
+            transform: rotate(-2deg) scale(1.05);
         }
-        
-        .nav-links a { 
-            color: white; 
-            text-decoration: none; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            font-size: 0.9rem; 
-            letter-spacing: 1px; 
-            transition: color 0.3s; 
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
         }
-        
-        .nav-links a:hover { color: var(--mustard); }
-        .nav-links a.active { color: var(--mustard); border-bottom: 2px solid var(--mustard); }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--mustard);
+        }
+
+        .nav-links a.active {
+            color: var(--mustard);
+            border-bottom: 2px solid var(--mustard);
+        }
 
         /* --- Hamburger Menu Styles --- */
         .hamburger {
-            display: none; /* Hidden on desktop */
+            display: none;
             cursor: pointer;
             flex-direction: column;
             gap: 6px;
@@ -104,28 +127,51 @@
             align-items: center;
         }
 
-        .hero h1 { font-size: 5rem; color: var(--wade-red); text-shadow: 3px 3px 0px rgba(0,0,0,0.08); }
-        .hero p { font-size: 1.5rem; font-weight: 700; color: var(--navy); max-width: 600px; }
+        .hero h1 {
+            font-size: 5rem;
+            color: var(--wade-red);
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            max-width: 600px;
+        }
 
         /* --- Main Layout --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 5%; }
-        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
         .section-split {
             display: flex;
             align-items: center;
             gap: 4rem;
             margin-bottom: 6rem;
         }
-        .section-split:nth-child(even) { flex-direction: row-reverse; }
 
-        .text-content { flex: 1; }
-        .image-content { flex: 1; position: relative; }
+        .section-split:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .image-content {
+            flex: 1;
+            position: relative;
+        }
 
         .image-content img {
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-            transform: rotate(2deg); 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: rotate(2deg);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
@@ -134,8 +180,8 @@
         }
 
         .image-content img:hover,
-        .section-split:nth-child(even) .image-content img:hover { 
-            transform: rotate(0deg) scale(1.03); 
+        .section-split:nth-child(even) .image-content img:hover {
+            transform: rotate(0deg) scale(1.03);
         }
 
         .image-content::after {
@@ -148,18 +194,24 @@
             height: 30px;
             background-color: var(--tape-color);
             backdrop-filter: blur(4px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            pointer-events: none; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
         }
 
-        /* --- Infinite Scrolling Photo Gallery (Desktop Defaults) --- */
-        .gallery-title { text-align: center; font-size: 3.5rem; color: var(--navy); margin-bottom: 2rem; padding: 0 5%;}
-        
+        /* --- Infinite Scrolling Photo Gallery --- */
+        .gallery-title {
+            text-align: center;
+            font-size: 3.5rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            padding: 0 5%;
+        }
+
         .gallery-container {
             width: 100%;
             overflow: hidden;
             white-space: nowrap;
-            padding: 4rem 0 6rem 0; 
+            padding: 4rem 0 6rem 0;
             position: relative;
         }
 
@@ -171,44 +223,68 @@
         .gallery-item {
             display: inline-block;
             margin: 0 1.5rem;
-            height: 350px; 
-            width: auto;   
+            height: 350px;
+            width: auto;
             border-radius: 4px;
-            border: 10px solid white; 
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border: 10px solid white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } 
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
-        /* ONLY apply hover effects if the device has a mouse/trackpad */
         @media (hover: hover) and (pointer: fine) {
             .gallery-container:hover .gallery-track {
                 animation-play-state: paused;
             }
+
             .gallery-item:hover {
                 transform: scale(1.2) rotate(-3deg);
                 z-index: 50;
-                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
                 border-color: var(--mustard);
             }
         }
 
         /* --- Scroll Animation Classes --- */
-        .hidden-left { opacity: 0; transform: translateX(-100px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hidden-right { opacity: 0; transform: translateX(100px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hidden-up { opacity: 0; transform: translateY(80px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        
-        .show { opacity: 1; transform: translateX(0) translateY(0); }
+        .hidden-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-        .delay-1 { transition-delay: 0.1s; }
+        .hidden-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-        /* --- CTA --- */
+        .hidden-up {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateX(0) translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        /* --- CTA & PayPal Button --- */
         .cta-section {
             background-color: var(--wade-red);
             color: white;
@@ -216,29 +292,50 @@
             padding: 6rem 5%;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--mustard);
-            color: var(--charcoal);
+        .btn-paypal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            background-color: #FFC439;
+            /* Official PayPal Yellow */
+            color: #003087;
+            /* Official PayPal Dark Blue */
             padding: 1rem 2.5rem;
             font-size: 1.2rem;
             font-weight: 900;
             text-decoration: none;
             border-radius: 50px;
             margin-top: 1.5rem;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-family: 'Nunito', sans-serif;
         }
-        .btn:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-        footer { background-color: var(--charcoal); color: white; text-align: center; padding: 2rem; }
+        .btn-paypal i {
+            font-size: 1.5rem;
+        }
+
+        .btn-paypal:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background-color: #003087;
+            color: white;
+        }
+
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            /* Fix the Hamburger */
-            .hamburger { display: flex !important; }
-            
-            /* Mobile Nav Dropdown */
+            .hamburger {
+                display: flex !important;
+            }
+
             .nav-links {
                 position: absolute;
                 top: 100%;
@@ -251,66 +348,87 @@
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
             }
 
             .nav-links.nav-active {
-                max-height: 600px; 
+                max-height: 600px;
                 padding: 2rem 0;
             }
 
-            .nav-links li { margin: 1rem 0; }
+            .nav-links li {
+                margin: 1rem 0;
+            }
 
-            /* Hamburger to 'X' Animation */
-            .toggle .line1 { transform: rotate(-45deg) translate(-6px, 6px); }
-            .toggle .line2 { opacity: 0; }
-            .toggle .line3 { transform: rotate(45deg) translate(-6px, -6px); }
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-6px, 6px);
+            }
 
-            /* Text & Layout Adjustments */
-            .hero { padding: 5rem 5%; min-height: 50vh; background-attachment: scroll; }
-            .hero h1 { font-size: 3.5rem; }
-            
-            .section-split, .section-split:nth-child(even) { 
-                flex-direction: column; 
-                text-align: center; 
+            .toggle .line2 {
+                opacity: 0;
+            }
+
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-6px, -6px);
+            }
+
+            .hero {
+                padding: 5rem 5%;
+                min-height: 50vh;
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .section-split,
+            .section-split:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
                 gap: 2.5rem;
             }
 
-            /* Gallery changes for mobile swiping */
-            .gallery-title { font-size: 2.5rem; }
-            
-            .gallery-container { 
-                padding: 1rem 0 2rem 0;
-                overflow-x: auto; 
-                -webkit-overflow-scrolling: touch; 
-                scroll-snap-type: x mandatory; 
-            }
-            
-            .gallery-track {
-                animation: none !important; 
-                display: flex; 
-                padding: 0 1rem;
-            }
-            
-            .gallery-item { 
-                height: 250px; 
-                margin: 0 0.5rem;
-                scroll-snap-align: center; 
-                flex-shrink: 0; 
+            .gallery-title {
+                font-size: 2.5rem;
             }
 
-            /* Hide the duplicate images on mobile */
-            .duplicate { display: none; }
-            
-            .cta-section { padding: 4rem 5%; }
+            .gallery-container {
+                padding: 1rem 0 2rem 0;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+            }
+
+            .gallery-track {
+                animation: none !important;
+                display: flex;
+                padding: 0 1rem;
+            }
+
+            .gallery-item {
+                height: 250px;
+                margin: 0 0.5rem;
+                scroll-snap-align: center;
+                flex-shrink: 0;
+            }
+
+            .duplicate {
+                display: none;
+            }
+
+            .cta-section {
+                padding: 4rem 5%;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
         <a href="index.html" class="logo">The Wade Center</a>
-        
+
         <div class="hamburger" id="hamburger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -333,73 +451,101 @@
     </header>
 
     <main class="container">
-        
+
         <section class="section-split">
             <div class="text-content hidden-left">
                 <h2 style="font-size: 3rem; color: var(--wade-red);">Our Mission</h2>
-                <p>The Wade Center exists to nurture Bluefield’s children, youth, and their families spiritually, physically, emotionally, and intellectually through practical programs and mentoring relationships.</p>
-                
+                <p>The Wade Center exists to nurture Bluefield’s children, youth, and their families spiritually,
+                    physically, emotionally, and intellectually through practical programs and mentoring relationships.
+                </p>
+
                 <blockquote style="text-align: center; margin-top: 1.5rem; font-style: italic; color: var(--navy);">
-                    "They will rebuild the ancient ruins and restore the places long devastated; they will renew the ruined cities that have been devastated for generations"<br>
+                    "They will rebuild the ancient ruins and restore the places long devastated; they will renew the
+                    ruined cities that have been devastated for generations"<br>
                     <strong>— Isaiah 61:4</strong>
                 </blockquote>
             </div>
             <div class="image-content hidden-right">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="Children learning">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800"
+                    alt="Children learning">
             </div>
         </section>
 
         <section class="section-split">
             <div class="text-content hidden-right">
                 <h2 style="font-size: 3rem; color: var(--mustard);">What We Offer</h2>
-                <p>The Wade Center offers a variety of educational and enjoyable activities for everyone; including help with homework, hatching butterflies, learning 3D printing, art classes, and field trips.</p>
+                <p>The Wade Center offers a variety of educational and enjoyable activities for everyone; including help
+                    with homework, hatching butterflies, learning 3D printing, art classes, and field trips.</p>
             </div>
             <div class="image-content hidden-left">
-                <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&q=80&w=800" alt="Craft supplies">
+                <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&q=80&w=800"
+                    alt="Craft supplies">
             </div>
         </section>
 
         <section class="section-split">
             <div class="text-content hidden-left">
                 <h2 style="font-size: 3rem; color: var(--wade-red);">How YOU Can Help</h2>
-                <p>The Wade Center is all about our community. We do not charge families a fee for their children in grades 1-5 to attend the Wade Center's after-school and summer programs. Instead, we rely on churches, foundations, and local businesses and individuals to assist us in our mission. We also welcome volunteers to help tutors in the classrooms, lead devotionals, and pack weekend food bags.</p>
+                <p>The Wade Center is all about our community. We do not charge families a fee for their children in
+                    grades 1-5 to attend the Wade Center's after-school and summer programs. Instead, we rely on
+                    churches, foundations, and local businesses and individuals to assist us in our mission. We also
+                    welcome volunteers to help tutors in the classrooms, lead devotionals, and pack weekend food bags.
+                </p>
             </div>
             <div class="image-content hidden-right">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="Children learning">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800"
+                    alt="Children learning">
             </div>
         </section>
 
     </main>
 
     <h2 class="gallery-title hidden-up">Memories in the Making</h2>
-    
+
     <div class="gallery-container hidden-up delay-1">
         <div class="gallery-track">
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item">
 
-            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1572949645841-094f3a9c4c94?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
+                alt="Memory" class="gallery-item duplicate">
         </div>
     </div>
 
     <section class="cta-section hidden-up">
         <h2 style="font-size: 3.5rem;">Help Our Cause</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">It's not just about making a donation. It's about making a <strong>DIFFERENCE</strong>.</p>
-        <a href="#" class="btn">Donate Now</a>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">It's not just about making a donation. It's about making a
+            <strong>DIFFERENCE</strong>.
+        </p>
+        <a href="https://www.paypal.com/donate?token=tgsWWeAAT15b2ifE9-HAL7m_o2XU5TVY9qiKN-NLVAjXLqna_A3GIsE0qsYJFclQVMNrRCBjKgnL0EDY"
+            target="_blank" class="btn-paypal">
+            <i class="fa-brands fa-paypal"></i> Donate with PayPal
+        </a>
     </section>
 
     <footer>
         <p>1400 Highland Ave, Bluefield, WV 24701</p>
-        <p>&copy; 2026 The Wade Center</p>
+        <p>© 2026 The Wade Center - All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -418,11 +564,12 @@
                 }
             });
         }, {
-            threshold: 0.15 
+            threshold: 0.15
         });
 
         const hiddenElements = document.querySelectorAll('.hidden-left, .hidden-right, .hidden-up');
         hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
+
 </html>
